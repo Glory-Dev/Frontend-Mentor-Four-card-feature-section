@@ -1,0 +1,91 @@
+// Import Global Rules
+@import "global-rules";
+// Media Queries
+$mobile: "max-width: 575px";
+$desktop: "min-width: 576px";
+
+.container {
+  padding: 35px 40px 0;
+  @media ($mobile) {
+    padding-bottom: 35px;
+  }
+
+  > .head {
+    text-align: center;
+    @media ($desktop) {
+      margin: 0 auto;
+      max-width: 500px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 24px;
+      @media ($desktop) {
+        font-size: 30px;
+      }
+
+      &:first-child {
+        font-weight: 200;
+      }
+    }
+  }
+  > .content {
+    width: 1200px;
+    max-width: 100%;
+    margin: 65px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .cards {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      @media ($mobile) {
+        flex-direction: column;
+      }
+
+      > .card-holder {
+        display: grid;
+        gap: 30px;
+        width: 100%;
+
+        .card {
+          padding: 30px;
+          border-radius: 10px;
+          background-color: #fff;
+          border-top: 4px solid red;
+          box-shadow: 2px 8px 10px var(--grayish-blue);
+          // Colors
+          &.super {
+            border-top-color: var(--cyan);
+          }
+          &.team {
+            border-top-color: var(--red);
+          }
+          &.karma {
+            border-top-color: var(--orange);
+          }
+          &.calc {
+            border-top-color: var(--blue);
+          }
+
+          > h3 {
+            font-size: 22px;
+            margin: 0 0 15px;
+          }
+          > p {
+            @media ($mobile) {
+              font-size: 13px;
+            }
+          }
+          > img {
+            display: block;
+            margin-top: 30px;
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+}
